@@ -1,1 +1,20 @@
 This file was created by IntelliJ IDEA 12.0.4 for binding GitHub repository
+
+0.1
+Features
+- Start server with configuration yml setting file.
+- Inject resource instances with @Resource annotation.
+
+@RunWith(DropwizardJunitRunner.class)
+@ServiceConfiguration(value = SampleService.class, setting = "classpath:configurations.yml")
+public class SampleIntegrationTest {
+  @Resource
+  SampleResource sampleResource;
+
+  @Resource
+  SessionResource sessionResource;
+
+  @Test
+  public shouldBeAwesomeTestCode() {
+    // blah blah
+  ...
